@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Sparx Helper - God Tier Omniscient",
+  "version": "13.0.0",
+  "description": "Ultra Advanced AI + Real OCR for Sparx Reader, Maths & Science",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://*.sparx-learning.com/*",
+    "https://*.sparxmaths.com/*",
+    "https://*.sparxscience.com/*",
+    "http://localhost:11434/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.sparx-learning.com/*",
+        "https://*.sparxmaths.com/*",
+        "https://*.sparxscience.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

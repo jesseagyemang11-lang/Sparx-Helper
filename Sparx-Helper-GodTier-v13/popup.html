@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparx Helper God Tier</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; width: 420px; margin:0; padding:0; }
+        .header { background: linear-gradient(135deg, #6366f1, #a855f7); padding: 20px; text-align:center; font-size: 20px; font-weight: 700; }
+        .tabs { display: flex; background: #1e2937; margin: 12px; border-radius: 9999px; padding: 4px; }
+        .tab { flex: 1; padding: 12px; text-align: center; border-radius: 9999px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+        .tab.active { background: #6366f1; color: white; }
+        button { width: 100%; padding: 14px 16px; margin: 8px 0; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: #6366f1; color: white; }
+        .btn-primary:hover { background: #4f46e5; }
+        .btn-secondary { background: #334155; color: #e2e8f0; }
+        #answer { background: #1e2937; padding: 16px; border-radius: 12px; min-height: 220px; max-height: 420px; overflow-y: auto; margin: 12px; white-space: pre-wrap; line-height: 1.5; border: 1px solid #475569; }
+        .status { padding: 10px; background: #1e2937; border-radius: 8px; margin: 8px 12px; font-size: 13px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="header">SPARX HELPER <span style="color:#c4d0ff">GOD TIER v13</span></div>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="main">AI Solver</div>
+        <div class="tab" data-tab="ocr">OCR</div>
+        <div class="tab" data-tab="tools">Tools</div>
+    </div>
+
+    <div id="main-panel">
+        <button id="autoSolveBtn" class="btn-primary">⚡ Auto Solve Current Question</button>
+        <button id="bookmarkBtn" class="btn-secondary">🔖 Solve Bookmark Question</button>
+        <button id="fullAnalysisBtn" class="btn-secondary">📖 Full Analysis + Predictions</button>
+    </div>
+
+    <div id="ocr-panel" style="display:none;">
+        <button id="captureOCRBtn" class="btn-primary">📸 Capture Screenshot + OCR</button>
+        <div class="status">Real Tesseract.js OCR Ready</div>
+    </div>
+
+    <div id="tools-panel" style="display:none;">
+        <button id="memoryBtn" class="btn-secondary">🧠 Show Memory</button>
+        <button id="selfCorrectBtn" class="btn-secondary">🔄 Self Correct Answer</button>
+    </div>
+
+    <div class="status">Detected: <span id="site-type">Sparx Platform</span></div>
+    <div id="answer"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
